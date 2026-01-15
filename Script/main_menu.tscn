@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ubheh60e3ph"]
+
+[ext_resource type="Script" uid="uid://b8xqts3ape5rq" path="res://Script/main_menu.gd" id="1_5gkxe"]
+[ext_resource type="Texture2D" uid="uid://bv2l5itg11pa" path="res://assets/Firefly_Gemini Flash_tolong buatkan latar belakang untuk main menu di game saya, game saya berjudul chroni 664197(1).png" id="2_hhsby"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 294.0
+offset_top = 171.0
+offset_right = 294.0
+offset_bottom = 171.0
+script = ExtResource("1_5gkxe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -294.0
+offset_top = -171.0
+offset_right = 282.0
+offset_bottom = 151.0
+texture = ExtResource("2_hhsby")
+expand_mode = 1
+
+[node name="Button" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = 47.0
+offset_right = 131.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Button/VBoxContainer"]
+layout_mode = 2
+text = "Mulai"
+
+[connection signal="pressed" from="Button/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
